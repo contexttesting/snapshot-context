@@ -1,0 +1,32 @@
+{
+  "name": "snapshot-context",
+  "version": "1.0.0",
+  "description": "A context for zoroaster which enables snapshot testing.",
+  "main": "build",
+  "scripts": {
+    "test": "zoroaster test/spec --babel",
+    "test-watch": "zoroaster test/spec --watch --babel",
+    "build": "babel src --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/artdecocode/snapshot-context.git"
+  },
+  "keywords": [
+    "snapshot-context"
+  ],
+  "author": "Anton <anton@adc.sh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artdecocode/snapshot-context/issues"
+  },
+  "homepage": "https://github.com/artdecocode/snapshot-context#readme",
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.46",
+    "@babel/core": "7.0.0-beta.46",
+    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.46",
+    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.46",
+    "@babel/register": "7.0.0-beta.46",
+    "zoroaster": "1.1.0"
+  }
+}
