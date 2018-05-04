@@ -22,9 +22,13 @@ function c(t, color) {
 const isJSON = p => /\.json$/.test(p)
 
 export default async function context() {
+  let snapshotsDir = ''
   Object.assign(this, {
+    setDir(dir) {
+      snapshotsDir = dir
+    },
     save: async (path, snapshot) => {
-      const p = resolve(__dirname, '../snapshots', path)
+      const p = resolve(snapshotsDir, path)
       await ensurePath(p)
       if (isJSON(p)) {
         await writeJSON(p, snapshot, { space: 2 })
@@ -53,7 +57,7 @@ export default async function context() {
       }
     },
     read: async (path) => {
-      const p = resolve(__dirname, '../snapshots', path)
+      const p = resolve(snapshotsDir, path)
       if (isJSON(p)) {
         const snapshot = await readJSON(p)
         return snapshot
@@ -102,6 +106,7 @@ export default async function context() {
  * @property {(path: string, snapshot: string) => Promise<string>} save
  * @property {(path: string) => Promise<boolean>} prompt
  * @property {(path: string, actual: string) => Promise} test Test a snapshot.
+ * @property {(path: string)} setDir Set the directory to save snapshots.
  */
 
 

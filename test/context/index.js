@@ -10,8 +10,8 @@ const FIXTURES = resolve(__dirname, '../fixtures')
  */
 
 export default async function context () {
-  this.json = resolve(FIXTURES, 'test.json')
-  this.text = resolve(FIXTURES, 'test.txt')
+  this.json = resolve(FIXTURES, 'snapshots/test.json')
+  this.text = resolve(FIXTURES, 'snapshots/test.txt')
 }
 
 /**
