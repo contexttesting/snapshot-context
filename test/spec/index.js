@@ -1,22 +1,23 @@
-import { equal, assert } from 'zoroaster/assert'
-import context, { Context } from '../context' // eslint-disable-line no-unused-vars
-import snapshotContext from '../../src'
+import { equal } from 'zoroaster/assert'
+import context, { Context } from '../context'  // eslint-disable-line no-unused-vars
+import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
 
+
+/**
+ * @type {Object<string, (ctx: Context, sCtx: SnapshotContext)>}
+ */
 const snapshotContextTestSuite = {
-  context,
+  context: [context, snapshotContext],
   'should be a function'() {
     equal(typeof snapshotContext, 'function')
   },
-  'should call package without error'() {
-    assert.doesNotThrow(() => {
-      snapshotContext()
+  async 'can test json snapshot'(ctx, sCtx) {
+    await sCtx.test(ctx.json, {
+      data: 'test',
     })
   },
-  /**
-   * @param {Context} api
-   */
-  async 'calls test context method'(api) {
-    await api.example()
+  async 'can test text snapshot'(ctx, sCtx) {
+    await sCtx.test(ctx.text, 'test')
   },
 }
 

@@ -13,7 +13,10 @@
     "url": "git://github.com/artdecocode/snapshot-context.git"
   },
   "keywords": [
-    "snapshot-context"
+    "zoroaster",
+    "context",
+    "test",
+    "snapshot"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
@@ -28,5 +31,11 @@
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.46",
     "@babel/register": "7.0.0-beta.46",
     "zoroaster": "1.1.0"
+  },
+  "dependencies": {
+    "assert-diff": "1.2.6",
+    "diff": "3.5.0",
+    "reloquent": "0.2.0",
+    "wrote": "1.4.0"
   }
 }

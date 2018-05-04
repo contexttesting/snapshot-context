@@ -1,15 +1,17 @@
+import { resolve } from 'path'
+
+const FIXTURES = resolve(__dirname, '../fixtures')
+
 /**
  * @typedef {Object} Context
- * @property {function():Promise<string>} example An example method
+ * @property {string} json Path to a JSON fixture.
+ * @property {string} text Path to a text fixture.
+
  */
 
 export default async function context () {
-  this.example = async () => {
-    return 'OK'
-  }
-  this._destroy = async () => {
-    console.log('destroy context')
-  }
+  this.json = resolve(FIXTURES, 'test.json')
+  this.text = resolve(FIXTURES, 'test.txt')
 }
 
 /**
