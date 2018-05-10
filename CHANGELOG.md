@@ -1,3 +1,11 @@
+## 10 May 2018
+
+### 1.1.1
+
+- [fix] print strings without `inspect` when prompting
+- [dep] use [`erte`](https://artdeco.bz/erte) for color diff of strings
+- [test] add integration test
+
 ## 4 May 2018
 
 ### 1.1.0
