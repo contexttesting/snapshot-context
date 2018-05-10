@@ -1,23 +1,10 @@
 import { resolve } from 'path'
-import { diffChars } from 'diff'
+import erte from 'erte'
 import { equal } from 'assert'
 import reloquent from 'reloquent'
 import { inspect } from 'util'
 import { deepEqual } from 'assert-diff'
 import { read, write, createWritable, ensurePath, writeJSON, readJSON } from 'wrote'
-
-function c(t, color) {
-  switch (color) {
-     case 'red':
-      return `\x1b[31m${t}\x1b[0m`
-    case 'green':
-      return `\x1b[32m${t}\x1b[0m`
-    case 'grey':
-      return t
-    default:
-      return t
-  }
-}
 
 const isJSON = p => /\.json$/.test(p)
 
@@ -82,17 +69,10 @@ export default async function context() {
           return
         }
         if (!json) {
-          const diff = diffChars(actual, expected)
-          diff.forEach(({ added, removed, value }) => {
-            const color = added ? 'green' :
-              removed ? 'red' : 'grey'
-
-            const p = added || removed ? value.replace(/ /g, '_') : value
-            const colored = c(p, color)
-            process.stderr.write(colored)
-          })
-          console.log()
-          throw new Error('strings did not match')
+          const s = erte(actual, expected)
+          console.log(s) // eslint-disable-line no-console
+          const err = new Error('The string didn\'t match the snapshot.')
+          throw err
         }
         throw err
       }

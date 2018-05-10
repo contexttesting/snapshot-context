@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "assert-diff": "1.2.6",
-    "diff": "3.5.0",
+    "erte": "1.0.0",
     "reloquent": "0.2.0",
     "wrote": "1.4.0"
   }
