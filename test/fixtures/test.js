@@ -1,8 +1,6 @@
 import context, { Context } from '../context' // eslint-disable-line no-unused-vars
 import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
 
-Error.stackTraceLimit = 0
-
 /** @type {Object.<string, (ctx: Context, api: SnapshotContext)>} */
 const t = {
   context: [

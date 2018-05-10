@@ -25,8 +25,12 @@ export default async function context() {
       }
     },
     prompt: async (snapshot) => {
-      console.log(inspect(snapshot, { colors: true })) // eslint-disable-line
-      const { promise } = reloquent('save snapshot?')
+      if (typeof snapshot == 'string') {
+        console.log(snapshot) // eslint-disable-line no-console
+      } else {
+        console.log(inspect(snapshot, { colors: true })) // eslint-disable-line
+      }
+      const { promise } = reloquent('save snapshot? ')
       const answer = await promise
       return answer == 'y'
     },
