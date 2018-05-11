@@ -8,7 +8,7 @@ exports.SnapshotContext = void 0;
 
 var _path = require("path");
 
-var _diff = require("diff");
+var _erte = _interopRequireDefault(require("erte"));
 
 var _assert = require("assert");
 
@@ -21,22 +21,6 @@ var _assertDiff = require("assert-diff");
 var _wrote = require("wrote");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function c(t, color) {
-  switch (color) {
-    case 'red':
-      return `\x1b[31m${t}\x1b[0m`;
-
-    case 'green':
-      return `\x1b[32m${t}\x1b[0m`;
-
-    case 'grey':
-      return t;
-
-    default:
-      return t;
-  }
-}
 
 const isJSON = p => /\.json$/.test(p);
 
@@ -61,13 +45,17 @@ async function context() {
       }
     },
     prompt: async snapshot => {
-      console.log((0, _util.inspect)(snapshot, {
-        colors: true
-      })); // eslint-disable-line
+      if (typeof snapshot == 'string') {
+        console.log(snapshot); // eslint-disable-line no-console
+      } else {
+        console.log((0, _util.inspect)(snapshot, {
+          colors: true
+        })); // eslint-disable-line
+      }
 
       const {
         promise
-      } = (0, _reloquent.default)('save snapshot?');
+      } = (0, _reloquent.default)('save snapshot? ');
       const answer = await promise;
       return answer == 'y';
     },
@@ -111,19 +99,11 @@ async function context() {
         }
 
         if (!json) {
-          const diff = (0, _diff.diffChars)(actual, expected);
-          diff.forEach(({
-            added,
-            removed,
-            value
-          }) => {
-            const color = added ? 'green' : removed ? 'red' : 'grey';
-            const p = added || removed ? value.replace(/ /g, '_') : value;
-            const colored = c(p, color);
-            process.stderr.write(colored);
-          });
-          console.log();
-          throw new Error('strings did not match');
+          const s = (0, _erte.default)(actual, expected);
+          console.log(s); // eslint-disable-line no-console
+
+          const err = new Error('The string didn\'t match the snapshot.');
+          throw err;
         }
 
         throw err;
