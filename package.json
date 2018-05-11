@@ -9,6 +9,9 @@
     "test-watch": "zoroaster test/spec --watch --babel",
     "build": "babel src --out-dir build"
   },
+  "files": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/artdecocode/snapshot-context.git"
