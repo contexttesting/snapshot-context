@@ -1,3 +1,10 @@
+## 11 May 2018
+
+### 1.1.2
+
+- [package] set `files` to `build`
+- [fix] build the feature
+
 ## 10 May 2018
 
 ### 1.1.1
