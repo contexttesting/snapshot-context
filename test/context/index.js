@@ -3,26 +3,46 @@ import { resolve } from 'path'
 const FIXTURES = resolve(__dirname, '../fixtures')
 const SNAPSHOT_DIR = resolve(FIXTURES, 'snapshots')
 
-/**
- * @typedef {Object} Context
- * @property {string} SNAPSHOT_DIR Path to the snapshots dir
- * @property {string} jsonName Name of the JSON file.
- * @property {string} textName Name of the test file.
- * @property {string} json Path to a JSON fixture.
- * @property {string} text Path to a text fixture.
- * @property {string} testPath Path to a test.
- */
+const jsonName = 'test.json'
+const textName = 'test.txt'
+const textNewLinesName = 'test-new-lines.txt'
 
-export default async function context () {
-  this.SNAPSHOT_DIR = SNAPSHOT_DIR
-  this.jsonName = 'test.json'
-  this.textName = 'test.txt'
-  this.json = resolve(SNAPSHOT_DIR, this.jsonName)
-  this.text = resolve(SNAPSHOT_DIR, this.textName)
-  this.testPath = resolve(FIXTURES, 'test.js')
+export const Context = {
+  /**
+   * Path to the snapshots directory.
+   */
+  SNAPSHOT_DIR,
+  /**
+   * Name of the JSON file.
+   */
+  jsonName,
+  /**
+   *  Name of the test file.
+   */
+  textName,
+  /**
+   * Path to a JSON fixture.
+   */
+  json: resolve(SNAPSHOT_DIR, jsonName),
+  /**
+   * Path to a text fixture.
+   */
+  text: resolve(SNAPSHOT_DIR, textName),
+  /**
+   * Path to a test.
+   */
+  testPath: resolve(FIXTURES, 'test.js'),
+  /**
+   * Name of the test file with new lines.
+   */
+  textNewLinesName,
+  /**
+   * Path to a snapshot with new lines.
+   */
+  newLines: resolve(SNAPSHOT_DIR, textNewLinesName),
 }
 
-/**
- * @type {Context}
- */
-export const Context = {}
+export default function () {
+  Object.assign(this, Context)
+}
+

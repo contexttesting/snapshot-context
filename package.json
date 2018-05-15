@@ -4,8 +4,8 @@
   "description": "A context for zoroaster which enables snapshot testing.",
   "main": "build",
   "scripts": {
-    "test": "zoroaster test/spec --babel",
     "t": "zoroaster --babel",
+    "test": "zoroaster test/spec --babel",
     "test-watch": "zoroaster test/spec --watch --babel",
     "build": "babel src --out-dir build"
   },
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "assert-diff": "1.2.6",
-    "erte": "1.1.1",
+    "erte": "1.1.3",
     "reloquent": "0.2.0",
     "wrote": "1.4.0"
   }
