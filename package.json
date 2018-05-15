@@ -29,17 +29,17 @@
   },
   "homepage": "https://github.com/artdecocode/snapshot-context#readme",
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.46",
-    "@babel/core": "7.0.0-beta.46",
-    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.46",
-    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.46",
-    "@babel/register": "7.0.0-beta.46",
-    "spawncommand": "1.1.0",
+    "@babel/cli": "7.0.0-beta.47",
+    "@babel/core": "7.0.0-beta.47",
+    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.47",
+    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.47",
+    "@babel/register": "7.0.0-beta.47",
+    "spawncommand": "2.0.0",
     "zoroaster": "1.1.0"
   },
   "dependencies": {
     "assert-diff": "1.2.6",
-    "erte": "1.0.0",
+    "erte": "1.1.1",
     "reloquent": "0.2.0",
     "wrote": "1.4.0"
   }
