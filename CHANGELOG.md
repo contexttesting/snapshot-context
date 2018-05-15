@@ -1,3 +1,9 @@
+## 15 May 2018
+
+### 1.1.3
+
+- [fix] highlight additional or missing new lines in the snapshot.
+
 ## 11 May 2018
 
 ### 1.1.2
