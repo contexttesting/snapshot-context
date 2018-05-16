@@ -6,6 +6,7 @@
   "scripts": {
     "t": "zoroaster --babel",
     "test": "zoroaster test/spec --babel",
+    "test-build": "BABEL_ENV=test-build zoroaster test/spec --babel",
     "test-watch": "zoroaster test/spec --watch --babel",
     "build": "babel src --out-dir build",
     "example": "ZOROASTER_TIMEOUT=9999999 zoroaster example/spec --babel"
@@ -35,6 +36,7 @@
     "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.47",
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.47",
     "@babel/register": "7.0.0-beta.47",
+    "babel-plugin-transform-rename-import": "2.2.0",
     "spawncommand": "2.0.0",
     "zoroaster": "1.1.0"
   },
