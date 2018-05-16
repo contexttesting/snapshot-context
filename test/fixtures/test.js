@@ -1,7 +1,7 @@
-import context from '../context'
+import context, { Context } from '../context' // eslint-disable-line no-unused-vars
 import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
 
-/** @type {Object.<string, (ctx: context, api: SnapshotContext)>} */
+/** @type {Object.<string, (ctx: Context, api: SnapshotContext)>} */
 const T = {
   context: [
     context,
