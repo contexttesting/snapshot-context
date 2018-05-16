@@ -1,6 +1,9 @@
 import { equal } from 'zoroaster/assert'
 import context, { Context } from '../context' // eslint-disable-line no-unused-vars
 import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
+import { resolve } from 'path'
+
+const SNAPSHOT_DIR = resolve(__dirname, '../snapshot')
 
 /** @type {Object<string, (ctx: Context, sCtx: SnapshotContext)>} */
 const snapshotContextTestSuite = {
@@ -21,6 +24,14 @@ const snapshotContextTestSuite = {
   },
   async 'can test text snapshot with new lines'({ newLines }, { test }) {
     await test(newLines, 'draw a straight line\n\nthen drink some wine')
+  },
+  async 'can print color of strings correctly'({ text }, { setDir, test }) {
+    try {
+      await test(text, 'make')
+    } catch ({ erte }) {
+      setDir(SNAPSHOT_DIR)
+      await test('correct-color.txt', erte)
+    }
   },
 }
 
