@@ -1,3 +1,11 @@
+## 16 May 2018
+
+### 1.1.4
+
+- [feature] correct error stack which starts when `test` was called.
+- [fix] correct color difference (reverse `actual` w/ `expected`)
+- [tests] add and refactor some tests to have correct types & exports
+
 ## 15 May 2018
 
 ### 1.1.3
