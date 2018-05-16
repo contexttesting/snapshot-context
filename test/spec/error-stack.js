@@ -1,6 +1,6 @@
 import { ok } from 'assert'
 import { equal } from 'zoroaster/assert'
-import context from '../context'
+import context, { Context } from '../context' // eslint-disable-line no-unused-vars
 import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
 
 /** @type {Object<string, (ctx: Context, sCtx: SnapshotContext)>} */
@@ -22,13 +22,17 @@ const T = {
       ok(/captures correct stack/.test(captureTest))
     }
   },
-
-  // async 'can test text snapshot'({ text }, { test }) {
-  //   await test(text, 'test')
-  // },
-  // async 'can test text snapshot with new lines'({ newLines }, { test }) {
-  //   await test(newLines, 'draw a straight line\n\nthen drink some wine')
-  // },
+  async 'captures correct stack for text'({ text }, { test }) {
+    equal(typeof snapshotContext, 'function')
+    try {
+      await test(text, 'test-2')
+      throw new Error('should have thrown')
+    } catch ({ stack }) {
+      const [, test, captureTest ] = stack.split(/\n\s+at /)
+      ok(/test/.test(test))
+      ok(/captures correct stack/.test(captureTest))
+    }
+  },
 }
 
 export default T

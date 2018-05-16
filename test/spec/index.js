@@ -1,5 +1,5 @@
 import { equal } from 'zoroaster/assert'
-import context from '../context'
+import context, { Context } from '../context' // eslint-disable-line no-unused-vars
 import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
 
 /** @type {Object<string, (ctx: Context, sCtx: SnapshotContext)>} */
