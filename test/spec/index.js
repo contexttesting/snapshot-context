@@ -6,7 +6,7 @@ import { resolve } from 'path'
 const SNAPSHOT_DIR = resolve(__dirname, '../snapshot')
 
 /** @type {Object<string, (ctx: Context, sCtx: SnapshotContext)>} */
-const snapshotContextTestSuite = {
+const T = {
   context: [
     context,
     snapshotContext,
@@ -35,4 +35,4 @@ const snapshotContextTestSuite = {
   },
 }
 
-export default snapshotContextTestSuite
+export default T
