@@ -75,7 +75,7 @@ export default async function context() {
           return
         }
         if (!json) {
-          const s = erte(actual, expected)
+          const s = erte(expected, actual)
           console.log(s) // eslint-disable-line no-console
           const e = cb('The string didn\'t match the snapshot.')
           e.erte = s
