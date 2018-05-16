@@ -15,22 +15,28 @@ const T = {
       await test(json, {
         data: 'test-2',
       })
-      throw new Error('should have thrown')
-    } catch (err) {
-      const [, test, captureTest ] = err.stack.split(/\n\s+at /)
-      ok(/test/.test(test))
-      ok(/captures correct stack/.test(captureTest))
+      const e = new Error('should have thrown')
+      e.trow = e
+      throw e
+    } catch ({ stack, trow }) {
+      if (trow) throw trow
+      const [, test, captureTest ] = stack.split(/\n\s+at /)
+      ok(/^test/.test(test))
+      ok(/^captures correct stack/.test(captureTest))
     }
   },
   async 'captures correct stack for text'({ text }, { test }) {
     equal(typeof snapshotContext, 'function')
     try {
       await test(text, 'test-2')
-      throw new Error('should have thrown')
-    } catch ({ stack }) {
+      const e = new Error('should have thrown')
+      e.trow = e
+      throw e
+    } catch ({ stack, trow }) {
+      if (trow) throw trow
       const [, test, captureTest ] = stack.split(/\n\s+at /)
-      ok(/test/.test(test))
-      ok(/captures correct stack/.test(captureTest))
+      ok(/^test/.test(test))
+      ok(/^captures correct stack/.test(captureTest))
     }
   },
 }
