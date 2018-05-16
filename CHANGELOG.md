@@ -5,6 +5,7 @@
 - [feature] correct error stack which starts when `test` was called.
 - [fix] correct color difference (reverse `actual` w/ `expected`)
 - [tests] add and refactor some tests to have correct types & exports
+- [mop] `test-build` script and `BABEL_ENV=test-build` set-up to test build
 
 ## 15 May 2018
 
