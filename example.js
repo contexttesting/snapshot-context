@@ -1,3 +1,0 @@
-const snapshotContext = require('./')
-
-snapshotContext()

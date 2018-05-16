@@ -7,7 +7,8 @@
     "t": "zoroaster --babel",
     "test": "zoroaster test/spec --babel",
     "test-watch": "zoroaster test/spec --watch --babel",
-    "build": "babel src --out-dir build"
+    "build": "babel src --out-dir build",
+    "example": "ZOROASTER_TIMEOUT=9999999 zoroaster example/spec --babel"
   },
   "files": [
     "build"
