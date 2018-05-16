@@ -5,6 +5,7 @@ import reloquent from 'reloquent'
 import { inspect } from 'util'
 import { deepEqual } from 'assert-diff'
 import { read, write, createWritable, ensurePath, writeJSON, readJSON } from 'wrote'
+import erotic from 'erotic'
 
 const isJSON = p => /\.json$/.test(p)
 
@@ -58,6 +59,7 @@ export default async function context() {
       }
     },
     test: async (path, actual) => {
+      const cb = erotic(true)
       const json = isJSON(path)
       let expected
       try {
@@ -75,10 +77,12 @@ export default async function context() {
         if (!json) {
           const s = erte(actual, expected)
           console.log(s) // eslint-disable-line no-console
-          const err = new Error('The string didn\'t match the snapshot.')
-          throw err
+          const e = cb('The string didn\'t match the snapshot.')
+          e.erte = s
+          throw e
         }
-        throw err
+        const e = cb(err)
+        throw e
       }
     },
   })
