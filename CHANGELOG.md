@@ -6,6 +6,7 @@
 - [fix] correct color difference (reverse `actual` w/ `expected`)
 - [tests] add and refactor some tests to have correct types & exports
 - [mop] `test-build` script and `BABEL_ENV=test-build` set-up to test build
+- [package] `test-all` script with `yarn-s`
 
 ## 15 May 2018
 

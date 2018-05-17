@@ -1,5 +1,11 @@
 # snapshot-context
 
+[![npm version](https://badge.fury.io/js/snapshot-context.svg)](https://badge.fury.io/js/snapshot-context)
+
+```sh
+yarn add -D -E snapshot-context
+```
+
 `snapshot-context` is an Art Deco Node.js npm package.
 
 A context for zoroaster which enables snapshot testing.
