@@ -20,8 +20,7 @@ const T = {
       throw e
     } catch ({ stack, trow }) {
       if (trow) throw trow
-      const [, test, captureTest ] = stack.split(/\n\s+at /)
-      ok(/^test/.test(test))
+      const [, captureTest ] = stack.split(/\n\s+at /)
       ok(/^captures correct stack/.test(captureTest))
     }
   },
@@ -34,8 +33,7 @@ const T = {
       throw e
     } catch ({ stack, trow }) {
       if (trow) throw trow
-      const [, test, captureTest ] = stack.split(/\n\s+at /)
-      ok(/^test/.test(test))
+      const [, captureTest ] = stack.split(/\n\s+at /)
       ok(/^captures correct stack/.test(captureTest))
     }
   },
