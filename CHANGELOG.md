@@ -1,5 +1,9 @@
 ## 16 May 2018
 
+### 1.1.6
+
+- [dependencies] update to new `erotic` with `transparent` mode.
+
 ### 1.1.5
 
 - [package] `test-all` script with `yarn-s`
