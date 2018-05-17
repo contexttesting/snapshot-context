@@ -20,6 +20,8 @@ var _assertDiff = require("assert-diff");
 
 var _wrote = require("wrote");
 
+var _erotic = _interopRequireDefault(require("erotic"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const isJSON = p => /\.json$/.test(p);
@@ -81,6 +83,7 @@ async function context() {
       }
     },
     test: async (path, actual) => {
+      const cb = (0, _erotic.default)(true);
       const json = isJSON(path);
       let expected;
 
@@ -99,14 +102,16 @@ async function context() {
         }
 
         if (!json) {
-          const s = (0, _erte.default)(actual, expected);
+          const s = (0, _erte.default)(expected, actual);
           console.log(s); // eslint-disable-line no-console
 
-          const err = new Error('The string didn\'t match the snapshot.');
-          throw err;
+          const e = cb('The string didn\'t match the snapshot.');
+          e.erte = s;
+          throw e;
         }
 
-        throw err;
+        const e = cb(err);
+        throw e;
       }
     }
   });

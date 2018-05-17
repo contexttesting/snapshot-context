@@ -1,13 +1,16 @@
 {
   "name": "snapshot-context",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A context for zoroaster which enables snapshot testing.",
   "main": "build",
   "scripts": {
     "t": "zoroaster --babel",
     "test": "zoroaster test/spec --babel",
+    "test-build": "BABEL_ENV=test-build zoroaster test/spec --babel",
+    "test-all": "yarn-s test test-build",
     "test-watch": "zoroaster test/spec --watch --babel",
-    "build": "babel src --out-dir build"
+    "build": "babel src --out-dir build",
+    "example": "ZOROASTER_TIMEOUT=9999999 zoroaster example/spec --babel"
   },
   "files": [
     "build"
@@ -34,7 +37,9 @@
     "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.47",
     "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.47",
     "@babel/register": "7.0.0-beta.47",
+    "babel-plugin-transform-rename-import": "2.2.0",
     "spawncommand": "2.0.0",
+    "yarn-s": "1.1.0",
     "zoroaster": "1.1.0"
   },
   "dependencies": {
