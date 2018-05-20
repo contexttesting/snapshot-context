@@ -1,3 +1,9 @@
+## 20 May 2018
+
+### 1.1.7
+
+- [build] add source maps to the build
+
 ## 16 May 2018
 
 ### 1.1.6
