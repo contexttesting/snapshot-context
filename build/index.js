@@ -132,3 +132,4 @@ async function context() {
 
 const SnapshotContext = {};
 exports.SnapshotContext = SnapshotContext;
+//# sourceMappingURL=index.js.map

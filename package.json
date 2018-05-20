@@ -9,7 +9,7 @@
     "test-build": "BABEL_ENV=test-build zoroaster test/spec --babel",
     "test-all": "yarn-s test test-build",
     "test-watch": "zoroaster test/spec --watch --babel",
-    "build": "babel src --out-dir build",
+    "build": "babel src --out-dir build --source-maps",
     "example": "ZOROASTER_TIMEOUT=9999999 zoroaster example/spec --babel"
   },
   "files": [
