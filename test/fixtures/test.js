@@ -1,28 +1,28 @@
-import context, { Context } from '../context' // eslint-disable-line no-unused-vars
-import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
+import Context from '../context'
+import SnapshotContext from '../../src'
 
-/** @type {Object.<string, (ctx: Context, api: SnapshotContext)>} */
+/** @type {Object.<string, (c: Context, s: SnapshotContext)>} */
 const T = {
   context: [
-    context,
-    snapshotContext,
+    Context,
+    SnapshotContext,
   ],
   async 'matches against snapshot with success'(
-    { SNAPSHOT_DIR, textName }, { setDir, test },
+    { FIXTURE_SNAPSHOTS, textName }, { setDir, test },
   ) {
-    setDir(SNAPSHOT_DIR)
+    setDir(FIXTURE_SNAPSHOTS)
     await test(textName, 'test')
   },
   async 'matches against snapshot with error'(
-    { SNAPSHOT_DIR, textName }, { setDir, test },
+    { FIXTURE_SNAPSHOTS, textName }, { setDir, test },
   ) {
-    setDir(SNAPSHOT_DIR)
+    setDir(FIXTURE_SNAPSHOTS)
     await test(textName, 'test2')
   },
   async 'matches against snapshot with new lines with error'(
-    { SNAPSHOT_DIR, newLines }, { setDir, test },
+    { FIXTURE_SNAPSHOTS, newLines }, { setDir, test },
   ) {
-    setDir(SNAPSHOT_DIR)
+    setDir(FIXTURE_SNAPSHOTS)
     await test(newLines, 'draw a straight line\nthen drink some wine')
   },
 }

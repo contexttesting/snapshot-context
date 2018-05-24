@@ -1,18 +1,15 @@
 import { equal } from 'zoroaster/assert'
-import context, { Context } from '../context' // eslint-disable-line no-unused-vars
-import snapshotContext, { SnapshotContext } from '../../src' // eslint-disable-line no-unused-vars
-import { resolve } from 'path'
+import Context from '../context'
+import SnapshotContext from '../../src'
 
-const SNAPSHOT_DIR = resolve(__dirname, '../snapshot')
-
-/** @type {Object<string, (ctx: Context, sCtx: SnapshotContext)>} */
+/** @type {Object<string, (c: Context, s: SnapshotContext)>} */
 const T = {
   context: [
-    context,
-    snapshotContext,
+    Context,
+    SnapshotContext,
   ],
   'is a function'() {
-    equal(typeof snapshotContext, 'function')
+    equal(typeof SnapshotContext, 'function')
   },
   async 'can test json snapshot'({ json }, { test }) {
     await test(json, {
@@ -25,7 +22,7 @@ const T = {
   async 'can test text snapshot with new lines'({ newLines }, { test }) {
     await test(newLines, 'draw a straight line\n\nthen drink some wine')
   },
-  async 'can print color of strings correctly'({ text }, { setDir, test }) {
+  async 'can print color of strings correctly'({ text, SNAPSHOT_DIR }, { setDir, test }) {
     try {
       await test(text, 'make')
     } catch ({ erte }) {

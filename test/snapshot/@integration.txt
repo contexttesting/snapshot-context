@@ -1,0 +1,22 @@
+ /test/fixtures/test.js
+  ✓  matches against snapshot with success
+test2
+  ✗  matches against snapshot with error
+  | Error: The string didn't match the snapshot.
+  |     at matches against snapshot with error (/test/fixtures/test.js:20:11)
+draw a straight line
+⏎
+then drink some wine
+  ✗  matches against snapshot with new lines with error
+  | Error: The string didn't match the snapshot.
+  |     at matches against snapshot with new lines with error (/test/fixtures/test.js:26:11)
+
+/test/fixtures/test.js > matches against snapshot with error
+  Error: The string didn't match the snapshot.
+      at matches against snapshot with error (/test/fixtures/test.js:20:11)
+
+/test/fixtures/test.js > matches against snapshot with new lines with error
+  Error: The string didn't match the snapshot.
+      at matches against snapshot with new lines with error (/test/fixtures/test.js:26:11)
+
+🦅  Executed 3 tests: 2 errors.
