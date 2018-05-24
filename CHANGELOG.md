@@ -1,3 +1,12 @@
+## 24 May 2018
+
+### 2.0.0
+
+- [f] rewrite as a class with jsdoc for zoroaster@2.1
+- [t] test integration snapshot with snapshot context from src
+- [d] launch.json
+- [p] install zoroaster@2.1
+
 ## 20 May 2018
 
 ### 1.1.7
