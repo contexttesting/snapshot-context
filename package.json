@@ -40,7 +40,7 @@
     "babel-plugin-transform-rename-import": "2.2.0",
     "spawncommand": "2.0.0",
     "yarn-s": "1.1.0",
-    "zoroaster": "1.1.0"
+    "zoroaster": "2.1.0"
   },
   "dependencies": {
     "assert-diff": "1.2.6",
