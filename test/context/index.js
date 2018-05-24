@@ -1,13 +1,19 @@
 import { resolve } from 'path'
 
 const FIXTURES = resolve(__dirname, '../fixtures')
-const SNAPSHOT_DIR = resolve(FIXTURES, 'snapshots')
+const FIXTURE_SNAPSHOTS = resolve(FIXTURES, 'snapshots')
+
+const SNAPSHOT_DIR = resolve(__dirname, '../snapshot')
 
 const jsonName = 'test.json'
 const textName = 'test.txt'
 const textNewLinesName = 'test-new-lines.txt'
 
-export const Context = {
+export default {
+  /**
+   * Path to fixture snapshots. Used in integration test.
+   */
+  FIXTURE_SNAPSHOTS,
   /**
    * Path to the snapshots directory.
    */
@@ -23,11 +29,11 @@ export const Context = {
   /**
    * Path to a JSON fixture.
    */
-  json: resolve(SNAPSHOT_DIR, jsonName),
+  json: resolve(FIXTURE_SNAPSHOTS, jsonName),
   /**
    * Path to a text fixture.
    */
-  text: resolve(SNAPSHOT_DIR, textName),
+  text: resolve(FIXTURE_SNAPSHOTS, textName),
   /**
    * Path to a test.
    */
@@ -39,10 +45,5 @@ export const Context = {
   /**
    * Path to a snapshot with new lines.
    */
-  newLines: resolve(SNAPSHOT_DIR, textNewLinesName),
+  newLines: resolve(FIXTURE_SNAPSHOTS, textNewLinesName),
 }
-
-export default function () {
-  Object.assign(this, Context)
-}
-
