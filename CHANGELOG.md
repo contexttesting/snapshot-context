@@ -1,5 +1,9 @@
 ## 24 May 2018
 
+### 2.0.1
+
+- [j] fix jsdoc (answer with `y`)
+
 ### 2.0.0
 
 - [f] rewrite as a class with jsdoc for zoroaster@2.1
