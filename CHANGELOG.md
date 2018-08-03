@@ -1,3 +1,10 @@
+## 3 August 2018
+
+### 2.0.2
+
+- [fix] Rename export to `SnapshotContext` for _VS Code_, install missing dev dependency.
+- [package] Build w/ `bestie`, remove `@babel`.
+
 ## 24 May 2018
 
 ### 2.0.1
