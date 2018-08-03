@@ -29,7 +29,7 @@ const isJSON = p => /\.json$/.test(p);
  */
 
 
-class Context {
+class SnapshotContext {
   constructor() {
     this.snapshotsDir = '';
   }
@@ -96,7 +96,7 @@ class Context {
     }
   }
   /**
-   * Test the snapshot by reading the file and matching it against the given actual value. If filename ends with .json, the data will be serialised as a JSON, and then parsed back and deep-equal will be performed. Otherwise, string comparison is made with red/green highlighting. If no file exists, a prompt will be shown to save a snapshot. Answer with **y** to accept the snapshot and pass the test. There's no update possibility which means files must be deleted by hand and new snapshots taken.
+   * Test the snapshot by reading the file and matching it against the given actual value. If filename ends with `.json`, the data will be serialised as a JSON, and then parsed back and deep-equal will be performed. Otherwise, string comparison is made with red/green highlighting. If no file exists, a prompt will be shown to save a snapshot. Answer with **y** to accept the snapshot and pass the test. There's no update possibility which means files must be deleted by hand and new snapshots taken.
    * @param {string} path Path to the file
    * @param {string} actual Expected result
    */
@@ -138,5 +138,5 @@ class Context {
 
 }
 
-exports.default = Context;
+exports.default = SnapshotContext;
 //# sourceMappingURL=index.js.map
