@@ -11,7 +11,7 @@ var _erte = _interopRequireDefault(require("erte"));
 
 var _assert = require("assert");
 
-var _reloquent = _interopRequireDefault(require("reloquent"));
+var _reloquent = require("reloquent");
 
 var _util = require("util");
 
@@ -66,11 +66,8 @@ class SnapshotContext {
       })); // eslint-disable-line
     }
 
-    const {
-      promise
-    } = (0, _reloquent.default)('save snapshot? ');
-    const answer = await promise;
-    return answer == 'y';
+    const answer = await (0, _reloquent.askSingle)('save snapshot? ');
+    return answer;
   }
 
   async promptAndSave(path, actual, err = new Error('could not test missing snapshot')) {
