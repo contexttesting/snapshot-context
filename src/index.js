@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import erte from 'erte'
 import { equal } from 'assert'
-import reloquent from 'reloquent'
+import { askSingle } from 'reloquent'
 import { inspect } from 'util'
 import { deepEqual } from 'assert-diff'
 import { read, write, createWritable, ensurePath, writeJSON, readJSON } from 'wrote'
@@ -39,9 +39,8 @@ export default class SnapshotContext {
     } else {
       console.log(inspect(snapshot, { colors: true })) // eslint-disable-line
     }
-    const { promise } = reloquent('save snapshot? ')
-    const answer = await promise
-    return answer == 'y'
+    const answer = await askSingle('save snapshot? ')
+    return answer
   }
   async promptAndSave(path,
     actual,
