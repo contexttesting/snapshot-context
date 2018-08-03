@@ -32,12 +32,6 @@
   },
   "homepage": "https://github.com/artdecocode/snapshot-context#readme",
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.47",
-    "@babel/core": "7.0.0-beta.47",
-    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.47",
-    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.47",
-    "@babel/register": "7.0.0-beta.47",
-    "babel-plugin-transform-rename-import": "2.2.0",
     "spawncommand": "2.0.0",
     "yarn-s": "1.1.0",
     "zoroaster": "2.1.0"
