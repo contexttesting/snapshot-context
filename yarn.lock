@@ -8,6 +8,10 @@
   dependencies:
     makepromise "2.0.0"
 
+ansi-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
+
 argufy@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/argufy/-/argufy-1.1.2.tgz#e99107e00e84b6272bedc0b9a93e42014edd5a72"
@@ -180,6 +184,12 @@ spawncommand@2.0.1:
   resolved "https://registry.yarnpkg.com/spawncommand/-/spawncommand-2.0.1.tgz#088476fd8aa3c63932309ce0e76a8924d51a34ab"
   dependencies:
     catchment "2.0.1"
+
+strip-ansi@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-4.0.0.tgz#a8479022eb1ac368a871389b635262c505ee368f"
+  dependencies:
+    ansi-regex "^3.0.0"
 
 wordwrap@>=0.0.2:
   version "1.0.0"
