@@ -39,7 +39,7 @@ export default class SnapshotContext {
     } else {
       console.log(inspect(snapshot, { colors: true })) // eslint-disable-line
     }
-    const answer = await askSingle('save snapshot? ')
+    const answer = await askSingle('save snapshot?')
     return answer
   }
   async promptAndSave(path,
