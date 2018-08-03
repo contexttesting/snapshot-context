@@ -1,5 +1,9 @@
 ## 3 August 2018
 
+### 2.0.3
+
+- [fix] Correctly use `askSingle` from `reloquent`.
+
 ### 2.0.2
 
 - [fix] Rename export to `SnapshotContext` for _VS Code_, install missing dev dependency.
