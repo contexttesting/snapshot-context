@@ -66,7 +66,7 @@ class SnapshotContext {
       })); // eslint-disable-line
     }
 
-    const answer = await (0, _reloquent.askSingle)('save snapshot? ');
+    const answer = await (0, _reloquent.askSingle)('save snapshot?');
     return answer;
   }
 
