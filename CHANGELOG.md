@@ -1,3 +1,9 @@
+### 13 August 2018
+
+### 2.0.4
+
+- [package] Build with `alamode`.
+
 ## 3 August 2018
 
 ### 2.0.3
