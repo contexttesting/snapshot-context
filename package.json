@@ -9,7 +9,7 @@
     "test-build": "BABEL_ENV=test-build zoroaster test/spec -b",
     "test-all": "yarn-s test test-build",
     "test-watch": "zoroaster test/spec --watch --babel",
-    "build": "bestie --source-maps",
+    "build": "alamode src -o build",
     "example": "ZOROASTER_TIMEOUT=9999999 zoroaster example/spec -b"
   },
   "files": [
