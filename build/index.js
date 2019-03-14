@@ -10,11 +10,11 @@ let erotic = require('erotic'); if (erotic && erotic.__esModule) erotic = erotic
 const isJSON = p => /\.json$/.test(p)
 
 /**
- * SnapshotContext allows to match the test result against a snapshot.
+ * SnapshotContext allows to match the test result against a snapshot. The default snapshot location is `test/snapshot`.
  */
                class SnapshotContext {
   constructor() {
-    this.snapshotsDir = ''
+    this.snapshotsDir = 'test/snapshot'
   }
   /**
    * Set the directory to save snapshots in.
