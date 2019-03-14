@@ -1,4 +1,10 @@
-### 13 August 2018
+## 14 March 2019
+
+### 2.0.5
+
+- [feature] Automatically set `SNAPSHOT_DIR` to `test/snapshot`.
+
+## 13 August 2018
 
 ### 2.0.4
 
