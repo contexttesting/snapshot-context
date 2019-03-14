@@ -1,9 +1,9 @@
-import { resolve } from 'path'
+import { join, resolve } from 'path'
 
-const FIXTURES = resolve(__dirname, '../fixtures')
-const FIXTURE_SNAPSHOTS = resolve(FIXTURES, 'snapshots')
+const FIXTURES = 'test/fixture'
+const FIXTURE_SNAPSHOTS = 'test/fixture/snapshot'
 
-const SNAPSHOT_DIR = resolve(__dirname, '../snapshot')
+const SNAPSHOT_DIR = 'test/snapshot'
 
 const jsonName = 'test.json'
 const textName = 'test.txt'
@@ -27,17 +27,17 @@ export default {
    */
   textName,
   /**
-   * Path to a JSON fixture.
+   * Absolute path to a JSON fixture.
    */
   json: resolve(FIXTURE_SNAPSHOTS, jsonName),
   /**
-   * Path to a text fixture.
+   * Absolute Path to a text fixture.
    */
   text: resolve(FIXTURE_SNAPSHOTS, textName),
   /**
-   * Path to a test.
+   * Path to a test suite file.
    */
-  testPath: resolve(FIXTURES, 'test.js'),
+  testPath: join(FIXTURES, 'test.js'),
   /**
    * Name of the test file with new lines.
    */

@@ -2,12 +2,11 @@ import { equal } from 'zoroaster/assert'
 import Context from '../context'
 import SnapshotContext from '../../src'
 
-/** @type {Object<string, (c: Context, s: SnapshotContext)>} */
+/**
+ * @type {Object<string, (c:Context, s:SnapshotContext)>}
+ */
 const T = {
-  context: [
-    Context,
-    SnapshotContext,
-  ],
+  context: [Context, SnapshotContext],
   'is a function'() {
     equal(typeof SnapshotContext, 'function')
   },

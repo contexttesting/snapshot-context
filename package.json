@@ -34,14 +34,13 @@
     "alamode": "1.8.4",
     "documentary": "1.22.0",
     "spawncommand": "2.1.1",
-    "strip-ansi": "5.1.0",
     "yarn-s": "1.1.0",
     "zoroaster": "3.8.2"
   },
   "dependencies": {
     "assert-diff": "2.0.3",
     "erotic": "2.0.2",
-    "erte": "1.1.6",
+    "erte": "1.1.7",
     "reloquent": "1.2.4",
     "wrote": "1.4.0"
   }
