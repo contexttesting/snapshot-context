@@ -1,6 +1,6 @@
 {
   "name": "snapshot-context",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A context for zoroaster which enables snapshot testing.",
   "main": "build",
   "scripts": {
