@@ -11,7 +11,7 @@ const T = {
   ],
   async 'runs the test suite'({ testPath, SNAPSHOT_DIR }, { test, setDir }) {
     setDir(SNAPSHOT_DIR)
-    const { promise } = spawn('zoroaster', ['-b', testPath])
+    const { promise } = spawn('zoroaster', ['-a', testPath])
     const { stdout: s } = await promise
     const res = strip(s).replace(new RegExp(process.cwd(), 'g'), '').trim()
     await test('@integration.txt', res)

@@ -1,10 +1,10 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 let erte = require('erte'); if (erte && erte.__esModule) erte = erte.default;
-const { equal } = require('assert')
-const { askSingle } = require('reloquent')
-const { inspect } = require('util')
-const { deepEqual } = require('assert-diff')
-const { read, write, createWritable, ensurePath, writeJSON, readJSON } = require('wrote')
+const { equal } = require('assert');
+const { askSingle } = require('reloquent');
+const { inspect } = require('util');
+const { deepEqual } = require('assert-diff');
+const { read, write, createWritable, ensurePath, writeJSON, readJSON } = require('wrote');
 let erotic = require('erotic'); if (erotic && erotic.__esModule) erotic = erotic.default;
 
 const isJSON = p => /\.json$/.test(p)
@@ -12,7 +12,7 @@ const isJSON = p => /\.json$/.test(p)
 /**
  * SnapshotContext allows to match the test result against a snapshot.
  */
-class SnapshotContext {
+               class SnapshotContext {
   constructor() {
     this.snapshotsDir = ''
   }
@@ -98,5 +98,6 @@ class SnapshotContext {
     }
   }
 }
+
 
 module.exports = SnapshotContext

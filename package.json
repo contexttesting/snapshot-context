@@ -4,13 +4,12 @@
   "description": "A context for zoroaster which enables snapshot testing.",
   "main": "build",
   "scripts": {
-    "t": "zoroaster -b",
+    "t": "zoroaster -a",
     "test": "yarn t test/spec",
-    "test-build": "BABEL_ENV=test-build zoroaster test/spec -b",
+    "test-build": "ALAMODE_ENV=test-build yarn test",
     "test-all": "yarn-s test test-build",
-    "test-watch": "zoroaster test/spec --watch --babel",
-    "build": "alamode src -o build",
-    "example": "ZOROASTER_TIMEOUT=9999999 zoroaster example/spec -b"
+    "b": "alamode src -o build -s",
+    "example": "zoroaster -a -t 9999999 example/spec "
   },
   "files": [
     "build"
@@ -32,18 +31,18 @@
   },
   "homepage": "https://github.com/artdecocode/snapshot-context#readme",
   "devDependencies": {
-    "alamode": "1.1.0",
-    "documentary": "1.10.0",
-    "spawncommand": "2.0.1",
-    "strip-ansi": "4.0.0",
+    "alamode": "1.8.4",
+    "documentary": "1.22.0",
+    "spawncommand": "2.1.1",
+    "strip-ansi": "5.1.0",
     "yarn-s": "1.1.0",
-    "zoroaster": "2.1.0"
+    "zoroaster": "3.8.2"
   },
   "dependencies": {
     "assert-diff": "2.0.3",
-    "erotic": "1.2.1",
-    "erte": "1.1.4",
-    "reloquent": "1.0.6",
+    "erotic": "2.0.2",
+    "erte": "1.1.6",
+    "reloquent": "1.2.4",
     "wrote": "1.4.0"
   }
 }
