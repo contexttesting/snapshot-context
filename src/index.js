@@ -1,11 +1,12 @@
 import { resolve } from 'path'
 import erte from 'erte'
 import { equal } from 'assert'
-import { askSingle } from 'reloquent'
+import { confirm } from 'reloquent'
 import { inspect } from 'util'
 import { deepEqual } from 'assert-diff'
 import { read, write, createWritable, ensurePath, writeJSON, readJSON } from 'wrote'
 import erotic from 'erotic'
+import frame from 'frame-of-mind'
 
 const isJSON = p => /\.json$/.test(p)
 
@@ -33,25 +34,32 @@ export default class SnapshotContext {
       await write(ws, snapshot)
     }
   }
-  async prompt(snapshot) {
+  async prompt(snapshot, name) {
+    if (!process.stdin.isTTY) {
+      throw new Error('The terminal is not TTY to save snapshots.')
+    }
     if (typeof snapshot == 'string') {
-      console.log(snapshot) // eslint-disable-line no-console
+      let maxWidth = snapshot.split('\n').reduce((acc, current) => {
+        if (current.length > acc) return current.length
+      }, 0)
+      if (process.stdout.isTTY && process.stdout.columns - 4 >= maxWidth) {
+        console.log(frame(snapshot)) // eslint-disable-line no-console
+      } else {
+        console.log(snapshot) // eslint-disable-line no-console
+      }
     } else {
       console.log(inspect(snapshot, { colors: true })) // eslint-disable-line
     }
-    const answer = await askSingle('save snapshot?')
+    const answer = await confirm(`Save snapshot${name ? ` for ${name}` : ''}?`)
     return answer
   }
-  async promptAndSave(path,
-    actual,
-    err = new Error('could not test missing snapshot')
-  ) {
-    if (!actual) throw new Error('give snapshot to save')
-    const res = await this.prompt(actual)
+  async promptAndSave(path, actual, name) {
+    if (!actual) throw new Error('Give snapshot to save')
+    const res = await this.prompt(actual, name)
     if (res) {
       await this.save(path, actual)
     } else {
-      throw err
+      throw new Error('Could not test missing snapshot')
     }
   }
   async read(path) {
@@ -68,9 +76,10 @@ export default class SnapshotContext {
    * Test the snapshot by reading the file and matching it against the given actual value. If filename ends with `.json`, the data will be serialised as a JSON, and then parsed back and deep-equal will be performed. Otherwise, string comparison is made with red/green highlighting. If no file exists, a prompt will be shown to save a snapshot. Answer with **y** to accept the snapshot and pass the test. There's no update possibility which means files must be deleted by hand and new snapshots taken.
    * @param {string} path Path to the file
    * @param {string} actual Expected result
+   * @param {string} name The name of the test.
    */
-  async test(path, actual) {
-    if (!actual) throw new Error('pass the actual value')
+  async test(path, actual, name) {
+    if (!actual) throw new Error('Pass the actual value for snapshot.')
     const cb = erotic(true)
     const json = isJSON(path)
     let expected
@@ -83,7 +92,7 @@ export default class SnapshotContext {
       }
     } catch (err) {
       if (err.code == 'ENOENT') {
-        await this.promptAndSave(path, actual)
+        await this.promptAndSave(path, actual, name)
         return
       }
       if (!json) {
