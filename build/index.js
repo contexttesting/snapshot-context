@@ -35,9 +35,6 @@ const isJSON = p => /\.json$/.test(p)
     }
   }
   async prompt(snapshot, name) {
-    if (!process.stdin.isTTY) {
-      throw new Error('The terminal is not TTY to save snapshots.')
-    }
     if (typeof snapshot == 'string') {
       let maxWidth = snapshot.split('\n').reduce((acc, current) => {
         if (current.length > acc) return current.length
