@@ -1,5 +1,9 @@
 ## 16 March 2019
 
+### 2.1.1
+
+- [fix] Remove TTY check for `stdin`.
+
 ### 2.1.0
 
 - [feature] Add frame if terminal has space for it, check for TTY and allow to pass the name of the test.
