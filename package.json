@@ -9,6 +9,7 @@
     "test-build": "ALAMODE_ENV=test-build yarn test",
     "test-all": "yarn-s test test-build",
     "b": "alamode src -o build -s",
+    "doc": "NODE_DEBUG=doc doc documentary -o README.md",
     "example": "zoroaster -a -t 9999999 example/spec "
   },
   "files": [

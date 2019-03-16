@@ -1,26 +1,3 @@
-# snapshot-context
-
-[![npm version](https://badge.fury.io/js/snapshot-context.svg)](https://npmjs.org/package/snapshot-context)
-
-`snapshot-context` is Context For Snapshot Testing In _Zoroaster_.
-
-```sh
-yarn add -DE snapshot-context
-```
-
->**Since Zoroaster 3.8.5, the snapshot functionality is enabled by returning the result of the test, there's no need to install this package manually.**
-
-## Table Of Contents
-
-- [Table Of Contents](#table-of-contents)
-- [class `SnapshotContext`](#class-snapshotcontext)
-- [API](#api)
-  * [setDir(path:string)](#setdirpathstring)
-  * [async test(path:string, actual: string|object)](#async-testpathstring-actual-stringobject)
-- [Copyright](#copyright)
-
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
-
 ## class `SnapshotContext`
 
 The snapshot context should be passed in to a [`Zoroaster`](https://github.com/contexttesting/zoroaster) test suite in the `context` property.
@@ -50,13 +27,13 @@ const T = {
 export default T
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+%~%
 
 ## API
 
 There is a set of methods made available by the API.
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true" width="15"></a></p>
+%~ width="15"%
 
 ### setDir(path:string)
 
@@ -104,7 +81,7 @@ const T = {
 export default T
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true" width="15"></a></p>
+%~ width="15"%
 
 ### async test(path:string, actual: string|object)
 
@@ -124,12 +101,4 @@ The difference between strings will be highlighted with `erte`.
 
 ![string diff](doc/string-diff.png)
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/4.svg?sanitize=true"></a></p>
-
-## Copyright
-
-
-  (c) [Context Testing](https://contexttesting.com) 2019
-
-
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>
+%~%
