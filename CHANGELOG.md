@@ -1,6 +1,6 @@
 ## 21 March 2019
 
-### [2.2.0](https://github.com/artdecocode/snapshot-context/compare/v2.1.1...v2.2.0)
+### [2.2.0](https://github.com/contexttesting/snapshot-context/compare/v2.1.1...v2.2.0)
 
 - [feature] Update snapshot in interactive mode.
 
