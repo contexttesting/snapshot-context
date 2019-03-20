@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/artdecocode/snapshot-context#readme",
   "devDependencies": {
-    "alamode": "1.8.5",
+    "alamode": "1.8.6",
     "documentary": "1.22.0",
     "spawncommand": "2.1.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "3.8.5"
+    "zoroaster": "3.9.1"
   },
   "dependencies": {
     "assert-diff": "2.0.3",

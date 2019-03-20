@@ -74,8 +74,9 @@ const isJSON = p => /\.json$/.test(p)
    * @param {string} path Path to the file
    * @param {string} actual Expected result
    * @param {string} name The name of the test.
+   * @param {boolean} [interactive] Whether to ask to update the test in interactive mode.
    */
-  async test(path, actual, name) {
+  async test(path, actual, name, interactive = false) {
     if (!actual) throw new Error('Pass the actual value for snapshot.')
     const cb = erotic(true)
     const json = isJSON(path)
@@ -92,11 +93,23 @@ const isJSON = p => /\.json$/.test(p)
         await this.promptAndSave(path, actual, name)
         return
       }
+      let erteString
       if (!json) {
-        const s = erte(expected, actual)
-        console.log(s) // eslint-disable-line no-console
+        erteString = erte(expected, actual)
+      }
+      if (interactive) {
+        if (json) console.log(err.message)
+        else console.log(erteString)
+        const upd = await confirm(`Update snapshot${name ? ` for ${name}` : ''}?`)
+        if (upd) {
+          await this.save(path, actual)
+          return
+        }
+      }
+      if (!json) {
+        !interactive && console.log(erteString) // eslint-disable-line no-console
         const e = cb('The string didn\'t match the snapshot.')
-        e.erte = s
+        e.erte = erteString
         throw e
       }
       const e = cb(err)
