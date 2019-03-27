@@ -66,7 +66,7 @@ const isJSON = p => /\.json$/.test(p)
       return snapshot
     } else {
       const snapshot = await read(p)
-      return snapshot.trim()
+      return snapshot
     }
   }
   /**
