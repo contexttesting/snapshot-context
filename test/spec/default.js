@@ -19,7 +19,7 @@ const T = {
     await test(text, 'test')
   },
   async 'can test text snapshot with new lines'({ newLines }, { test }) {
-    await test(newLines, 'draw a straight line\n\nthen drink some wine')
+    await test(newLines, 'draw a straight line\n\nthen drink some wine\n')
   },
   async 'can print color of strings correctly'({ text, SNAPSHOT_DIR }, { setDir, test }) {
     try {

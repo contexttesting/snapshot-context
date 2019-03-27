@@ -1,4 +1,4 @@
- test/fixture/test.js
+test/fixture/test.js
   ✓  matches against snapshot with success
 test2
   ✗  matches against snapshot with error
@@ -6,7 +6,8 @@ test2
   |     at matches against snapshot with error (/test/fixture/test.js:20:11)
 draw a straight line
 ⏎
-then drink some wine
+then drink some wine⏎
+
   ✗  matches against snapshot with new lines with error
   | Error: The string didn't match the snapshot.
   |     at matches against snapshot with new lines with error (/test/fixture/test.js:26:11)

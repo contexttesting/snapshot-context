@@ -66,7 +66,7 @@ export default class SnapshotContext {
       return snapshot
     } else {
       const snapshot = await read(p)
-      return snapshot.trim()
+      return snapshot
     }
   }
   /**
