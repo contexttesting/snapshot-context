@@ -4,7 +4,9 @@ const { equal } = require('assert');
 const { confirm } = require('reloquent');
 const { inspect } = require('util');
 const { deepEqual } = require('assert-diff');
-const { read, write, createWritable, ensurePath, writeJSON, readJSON } = require('wrote');
+let read = require('@wrote/read'); if (read && read.__esModule) read = read.default;
+let write = require('@wrote/write'); if (write && write.__esModule) write = write.default;
+let ensurePath = require('@wrote/ensure-path'); if (ensurePath && ensurePath.__esModule) ensurePath = ensurePath.default;
 let erotic = require('erotic'); if (erotic && erotic.__esModule) erotic = erotic.default;
 let frame = require('frame-of-mind'); if (frame && frame.__esModule) frame = frame.default;
 
@@ -28,10 +30,10 @@ const isJSON = p => /\.json$/.test(p)
     const p = resolve(this.snapshotsDir, path)
     await ensurePath(p)
     if (isJSON(p)) {
-      await writeJSON(p, snapshot, { space: 2 })
+      const data = JSON.stringify(snapshot, null, 2)
+      await write(p, data)
     } else {
-      const ws = await createWritable(p)
-      await write(ws, snapshot)
+      await write(p, snapshot)
     }
   }
   async prompt(snapshot, name) {
@@ -62,7 +64,8 @@ const isJSON = p => /\.json$/.test(p)
   async read(path) {
     const p = resolve(this.snapshotsDir, path)
     if (isJSON(p)) {
-      const snapshot = await readJSON(p)
+      const data = await read(p)
+      const snapshot = JSON.parse(data)
       return snapshot
     } else {
       const snapshot = await read(p)
