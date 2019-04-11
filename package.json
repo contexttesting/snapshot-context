@@ -32,18 +32,20 @@
   },
   "homepage": "https://github.com/contexttesting/snapshot-context#readme",
   "devDependencies": {
-    "alamode": "1.8.6",
-    "documentary": "1.22.0",
-    "spawncommand": "2.1.1",
+    "alamode": "^1.9.2",
+    "documentary": "^1.23.4",
+    "spawncommand": "^2.1.2",
     "yarn-s": "1.1.0",
-    "zoroaster": "3.11.0"
+    "zoroaster": "^3.11.4"
   },
   "dependencies": {
+    "@wrote/ensure-path": "^1.0.6",
+    "@wrote/read": "^1.0.4",
+    "@wrote/write": "^1.0.4",
     "assert-diff": "2.0.3",
-    "erotic": "2.0.2",
-    "erte": "1.1.7",
-    "frame-of-mind": "1.0.0",
-    "reloquent": "1.2.4",
-    "wrote": "1.4.0"
+    "erotic": "^2.1.1",
+    "erte": "^1.1.7",
+    "frame-of-mind": "^1.1.0",
+    "reloquent": "^1.2.4"
   }
 }

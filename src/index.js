@@ -4,7 +4,9 @@ import { equal } from 'assert'
 import { confirm } from 'reloquent'
 import { inspect } from 'util'
 import { deepEqual } from 'assert-diff'
-import { read, write, createWritable, ensurePath, writeJSON, readJSON } from 'wrote'
+import read from '@wrote/read'
+import write from '@wrote/write'
+import ensurePath from '@wrote/ensure-path'
 import erotic from 'erotic'
 import frame from 'frame-of-mind'
 
@@ -28,10 +30,10 @@ export default class SnapshotContext {
     const p = resolve(this.snapshotsDir, path)
     await ensurePath(p)
     if (isJSON(p)) {
-      await writeJSON(p, snapshot, { space: 2 })
+      const data = JSON.stringify(snapshot, null, 2)
+      await write(p, data)
     } else {
-      const ws = await createWritable(p)
-      await write(ws, snapshot)
+      await write(p, snapshot)
     }
   }
   async prompt(snapshot, name) {
@@ -62,7 +64,8 @@ export default class SnapshotContext {
   async read(path) {
     const p = resolve(this.snapshotsDir, path)
     if (isJSON(p)) {
-      const snapshot = await readJSON(p)
+      const data = await read(p)
+      const snapshot = JSON.parse(data)
       return snapshot
     } else {
       const snapshot = await read(p)
