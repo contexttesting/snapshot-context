@@ -1,3 +1,10 @@
+## 11 April 2019
+
+### [2.2.2](https://github.com/contexttesting/snapshot-context/compare/v2.2.1...v2.2.2)
+
+- [deps] Remove `wrote`, install `@wrote/read`, `@wrote/write` and `@wrote/ensure-path`.
+- [deps] Unlock dependencies.
+
 ## 27 March 2019
 
 ### [2.2.1](https://github.com/contexttesting/snapshot-context/compare/v2.2.0...v2.2.1)
