@@ -1,3 +1,9 @@
+## 30 April 2019
+
+### [2.3.0](https://github.com/contexttesting/snapshot-context/compare/v2.2.2...v2.3.0)
+
+- [deps] Install `@zoroaster/deep-equals` instead of `assert-diff`.
+
 ## 11 April 2019
 
 ### [2.2.2](https://github.com/contexttesting/snapshot-context/compare/v2.2.1...v2.2.2)

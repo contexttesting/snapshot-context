@@ -3,7 +3,7 @@ let erte = require('erte'); if (erte && erte.__esModule) erte = erte.default;
 const { equal } = require('assert');
 const { confirm } = require('reloquent');
 const { inspect } = require('util');
-const { deepEqual } = require('assert-diff');
+let deepEqual = require('@zoroaster/deep-equal'); if (deepEqual && deepEqual.__esModule) deepEqual = deepEqual.default;
 let read = require('@wrote/read'); if (read && read.__esModule) read = read.default;
 let write = require('@wrote/write'); if (write && write.__esModule) write = write.default;
 let ensurePath = require('@wrote/ensure-path'); if (ensurePath && ensurePath.__esModule) ensurePath = ensurePath.default;

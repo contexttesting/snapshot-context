@@ -42,7 +42,7 @@
     "@wrote/ensure-path": "^1.0.6",
     "@wrote/read": "^1.0.4",
     "@wrote/write": "^1.0.4",
-    "assert-diff": "2.0.3",
+    "@zoroaster/deep-equal": "^1.0.1",
     "erotic": "^2.1.1",
     "erte": "^1.1.7",
     "frame-of-mind": "^1.1.0",
