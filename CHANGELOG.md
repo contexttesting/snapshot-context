@@ -1,3 +1,9 @@
+## 1 May 2019
+
+### [2.4.0](https://github.com/contexttesting/snapshot-context/compare/v2.3.0...v2.4.0)
+
+- [package] Publish the `module` field with _src_.
+
 ## 30 April 2019
 
 ### [2.3.0](https://github.com/contexttesting/snapshot-context/compare/v2.2.2...v2.3.0)
